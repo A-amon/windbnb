@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AEAA,OAAO,CAAC,4FAAI;ADEZ,AAAA,KAAK,CAAA;EACD,cAAc,CAAA,OAAC;EACf,YAAY,CAAA,OAAC;EACb,MAAM,CAAA,OAAC;EACP,SAAS,CAAA,OAAC;EACV,QAAQ,CAAA,OAAC;CACZ;;ACND,AAAA,KAAK,CAAA;EACD,iBAAiB,CAAA,wBAAC;CACrB;;ACJD,AAAA,IAAI,EAAC,IAAI,CAAA;EACL,MAAM,EAAC,CAAC;EACR,OAAO,EAAC,CAAC;CACZ",
+    "sources": [
+        "../scss/index.scss",
+        "../scss/_color.scss",
+        "../scss/_typography.scss",
+        "../scss/_reset.scss"
+    ],
+    "names": [],
+    "file": "index.css"
+}
