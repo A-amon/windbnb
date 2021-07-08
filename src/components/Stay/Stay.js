@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import './css/Stay.css'
 
 Stay.propTypes = {
@@ -14,7 +15,9 @@ export default function Stay ({ image, isSuperHost, type, bedCount, rating, titl
     return (
         <li className="stay">
             <h2 className="stay__title">{title}</h2>
-            <img src={image} alt='' aria-hidden='true' />
+            <div className="stay__image">
+                <img loading='lazy' src={image} alt='' aria-hidden='true' />
+            </div>
             <div className="stay__info">
                 {
                     isSuperHost
@@ -28,6 +31,7 @@ export default function Stay ({ image, isSuperHost, type, bedCount, rating, titl
                     {rating}
                 </span>
             </div>
+            <Link to='/'></Link>
         </li>
     )
 }
