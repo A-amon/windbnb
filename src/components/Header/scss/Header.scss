@@ -1,0 +1,12 @@
+@import '../../../styles/scss/breakpoints';
+
+.header{
+    @include tablet-query{
+        display: flex;
+        align-items: center;
+
+        .searchbar{
+            margin-left: auto;
+        }
+    }
+}

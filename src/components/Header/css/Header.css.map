@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "ACEI,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EDAvC,AAAA,OAAO,CAAA;IAEC,OAAO,EAAE,IAAI;IACb,WAAW,EAAE,MAAM;GAM1B;EATD,AAKQ,OALD,CAKC,UAAU,CAAA;IACN,WAAW,EAAE,IAAI;GACpB",
     "sources": [
-        "../scss/Header.scss"
+        "../scss/Header.scss",
+        "../../../styles/scss/_breakpoints.scss"
     ],
     "names": [],
     "file": "Header.css"

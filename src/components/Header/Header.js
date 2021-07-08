@@ -16,7 +16,7 @@ export default function Header () {
     }
 
     return (
-        <header>
+        <header className="header">
             <Link to='/'>
                 <img src={Logo} alt='Windbnb logo | Click to visit Homepage' />
             </Link>

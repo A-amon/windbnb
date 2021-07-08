@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=Header.css.map */
+@media screen and (min-width: 768px) {
+  .header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header .searchbar {
+    margin-left: auto;
+  }
+}
+/*# sourceMappingURL=Header.css.map */
