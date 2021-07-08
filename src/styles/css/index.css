@@ -6,6 +6,7 @@
   --emperor:#4F4F4F;
   --silver:#BDBDBD;
   --concrete:#F2F2F2;
+  --white:#FFFFFF;
 }
 
 :root {
@@ -13,6 +14,7 @@
   --fontsize-xs:0.8rem;
   --fontsize-s:0.9rem;
   --fontsize-l:1.5rem;
+  --fontsize-r:1rem;
 }
 
 html, body, h1, h2, ul {
