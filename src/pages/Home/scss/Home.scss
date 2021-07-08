@@ -1,3 +1,4 @@
+@import '../../../styles/scss/breakpoints';
 
 .home{
     &__header{
@@ -20,5 +21,18 @@
 
     .stay{
         margin-bottom:2rem;
+    }
+
+    @include tablet-query{
+        &__stays{
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-gap: 24px;
+            grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+        }
+    }
+
+    @include laptop-query{
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     }
 }

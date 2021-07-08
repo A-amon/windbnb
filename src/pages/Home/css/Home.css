@@ -23,4 +23,23 @@
 .home .stay {
   margin-bottom: 2rem;
 }
+
+@media screen and (min-width: 768px) {
+  .home__stays {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    grid-gap: 24px;
+    -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
 /*# sourceMappingURL=Home.css.map */
