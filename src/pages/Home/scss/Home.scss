@@ -33,6 +33,8 @@
     }
 
     @include laptop-query{
-        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        &__stays{
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        }
     }
 }

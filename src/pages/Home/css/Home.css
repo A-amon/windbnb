@@ -37,7 +37,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .home {
+  .home__stays {
     -ms-grid-columns: (minmax(300px, 1fr))[auto-fill];
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
