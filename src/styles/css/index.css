@@ -5,14 +5,43 @@
   --gray:#828282;
   --emperor:#4F4F4F;
   --silver:#BDBDBD;
+  --concrete:#F2F2F2;
 }
 
 :root {
   --font-montserrat:'Montserrat', sans-serif;
+  --fontsize-xs:0.8rem;
+  --fontsize-s:0.9rem;
+  --fontsize-l:1.5rem;
 }
 
-html, body {
+html, body, h1, h2, ul {
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+li {
+  list-style: none;
+}
+
+input, button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.aria--hide {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 /*# sourceMappingURL=index.css.map */
