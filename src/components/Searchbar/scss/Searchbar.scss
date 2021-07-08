@@ -1,3 +1,4 @@
+@import "../../../styles/scss/breakpoints";
 @import "../../../styles/scss/classes";
 
 .bold-label{
@@ -21,6 +22,26 @@
         box-sizing: border-box;
         padding:1.5rem 1rem;
 
+        &::before, &::after{
+            content:'';
+            width: 100%;
+            position: fixed;
+            top:0;
+            left:0;
+            z-index: -1;
+        }
+
+        &::before{
+            height:100vh;
+            background:var(--black);
+            opacity: 0.5;
+        }
+
+        &::after{
+            height: 80vh;
+            background:var(--white);
+        }
+
         .searchbar__header{
             margin-bottom: 1rem;
             display: flex;
@@ -35,6 +56,7 @@
                 margin-left: auto;
             }
         }
+
         .searchbar__form{
             flex-direction: column;
             border-radius: 0;
@@ -133,6 +155,40 @@
         width: 15%;
         span{
             @extend .aria--hide;
+        }
+    }
+
+    @include tablet-query{
+        &--focused{
+            .searchbar__form{
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .searchbar__group{
+                &:nth-child(1){
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: 15px;
+                    box-shadow:-2px 0px 5px rgba(black, 0.1);
+                }
+                &:nth-child(2){
+                    border-bottom-left-radius: 0;
+                    border-top-right-radius: 15px;
+                    box-shadow:2px 0px 5px rgba(black, 0.1);
+                }
+            }
+
+            .searchbar__submit{
+                position: initial;
+                bottom:unset;
+                margin-left: 1rem;
+            }
+
+            .searchbar__locations{
+                width: 100%;
+                order:4;
+            }
         }
     }
 }
