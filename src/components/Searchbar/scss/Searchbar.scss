@@ -1,14 +1,102 @@
 @import "../../../styles/scss/classes";
 
-.searchbar{
-    display: flex;
-    align-items: center;
-    box-shadow:0px 0px 5px rgba(black, 0.1);
-    border-radius: 15px;
-    margin:1.5rem 0;
+.bold-label{
+    font-size: var(--fontsize-xs);
+    color:var(--mine-shaft);
+    font-weight: bold;
+}
 
-    label{
-        @extend .aria--hide;
+.searchbar{
+    padding:1.5rem 0;
+
+    //searchbar when focused/editing
+    &--focused{
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 1;
+        width: 100%;
+        height: 80vh;
+        background:var(--white);
+        box-sizing: border-box;
+        padding:1.5rem 1rem;
+
+        .searchbar__header{
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+
+            span{
+                @extend .bold-label;
+            }
+
+            button{
+                background:none;
+                margin-left: auto;
+            }
+        }
+        .searchbar__form{
+            flex-direction: column;
+            border-radius: 0;
+            box-shadow: none;   //remove default shadow
+        }
+
+        .searchbar__group{
+            width: 100%;
+            border:none;
+            padding:1rem;
+            box-sizing: border-box;
+
+            // add shadow to searchbar when focused
+            &:nth-child(1){
+                border-bottom:1px solid var(--concrete);
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                box-shadow:0px -2px 5px rgba(black, 0.1);
+            }
+
+            &:nth-child(2){
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                box-shadow:0px 2px 5px rgba(black, 0.1);
+            }
+
+            label{
+                width: initial;
+                height: initial;
+                overflow: visible;
+                @extend .bold-label;
+            }
+        }
+
+        .searchbar__locations{
+            width: 100%;
+            max-height: 30vh;
+            overflow: auto;
+        }
+
+        .searchbar__submit{
+            width: fit-content;
+            background:var(--burnt-sienna);
+            border-radius:15px;
+            padding:0.8rem 1rem;
+            position: absolute;
+            bottom:1rem;
+
+            span{
+                overflow: initial;
+                width: initial;
+                height: initial;
+                color:var(--concrete);
+            }
+        }
+    }
+
+    &__form{
+        display: flex;
+        align-items: center;
+        box-shadow:0px 0px 5px rgba(black, 0.1);
+        border-radius: 15px;
     }
 
     &__group, &__submit{
@@ -18,6 +106,11 @@
     &__group{
         border-right:1px solid var(--concrete);
         flex:1;
+        
+        label{
+            @extend .aria--hide;
+        }
+
         input{
             width: 100%;
             font-size:var(--fontsize-s);
@@ -26,6 +119,9 @@
             text-overflow: ellipsis;
             &::placeholder{
                 color:var(--silver);
+            }
+            &:focus{
+                outline:none;
             }
         }
     }
