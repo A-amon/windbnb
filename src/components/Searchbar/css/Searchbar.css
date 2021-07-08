@@ -1,0 +1,66 @@
+.aria--hide, .searchbar label, .searchbar__submit span {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.searchbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 1.5rem 0;
+}
+
+.searchbar__group, .searchbar__submit {
+  padding: 1rem 0.5rem;
+}
+
+.searchbar__group {
+  border-right: 1px solid var(--concrete);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.searchbar__group input {
+  width: 100%;
+  font-size: var(--fontsize-s);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.searchbar__group input::-webkit-input-placeholder {
+  color: var(--silver);
+}
+
+.searchbar__group input:-ms-input-placeholder {
+  color: var(--silver);
+}
+
+.searchbar__group input::-ms-input-placeholder {
+  color: var(--silver);
+}
+
+.searchbar__group input::placeholder {
+  color: var(--silver);
+}
+
+.searchbar__submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  width: 15%;
+}
+/*# sourceMappingURL=Searchbar.css.map */
