@@ -21,14 +21,17 @@ export const getAllProperties = () => {
     }
 }
 
-export const getProperties = (city, country, guests) => {
+export const getProperties = (city, country, guests = null) => {
     const filteredProperties = properties.filter(
         property =>
-            property.city === city &&
-            property.country === country &&
+            (
+                property.city === city &&
+                property.country === country
+            ) ||
             (guests !== null && guests <= property.maxGuests)
     ).sort(compareRatings)
 
+    console.log(city, filteredProperties)
     return dispatch => {
         dispatch(loadingProperties())
         dispatch({
