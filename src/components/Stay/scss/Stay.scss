@@ -1,0 +1,56 @@
+
+.stay{
+    display: flex;
+    flex-direction: column;
+
+    &__title{
+        font-size: var(--fontsize-r);
+        order:3;
+        color:var(--mine-shaft);
+    }
+
+    img{
+        width: 100%;
+        border-radius: 15px;
+    }
+
+    &__info{
+        display: flex;
+        align-items: center;
+        font-size: var(--fontsize-xs);
+        margin:1rem 0;
+
+        .stay__tag, .stay__rating{
+            color:var(--emperor);
+        }
+
+        .stay__tag{
+            border:2px solid var(--emperor);
+            border-radius: 50px;
+            padding:0.5rem;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .stay__content{
+            color:var(--gray);
+        }
+
+        .stay__rating{
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            &::before{
+                content:'';
+                height:1rem;
+                width: 1rem;
+                display: inline-block;
+                background:url('../../../assets/icons/star.svg');
+                background-size: 100%;
+                opacity: 0.72;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+}
