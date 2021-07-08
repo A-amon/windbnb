@@ -1,14 +1,10 @@
 import {
     GET_ALL_PROPERTIES,
     GET_PROPERTIES,
-    LOADING,
-    SET_SEARCH
+    LOADING
 } from './actionTypes'
 
 const initialState = {
-    searchCity: null,
-    searchCountry: null,
-    searchGuests: null,
     properties: [],
     isLoading: false
 }
@@ -31,13 +27,6 @@ export default function reducer (state = initialState, action) {
             return {
                 ...state,
                 isLoading: true
-            }
-        case SET_SEARCH:
-            return {
-                ...state,
-                searchCity: action.city,
-                searchCountry: action.country,
-                searchGuests: action.guests
             }
         default:
             return state
