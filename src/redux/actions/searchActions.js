@@ -1,12 +1,19 @@
-import {
-    SET_SEARCH
-} from '../actionTypes'
+import properties from '../../stays.json'
 
-export const setSearch = (city, country, guests) => {
-    return {
-        type: SET_SEARCH,
-        city,
-        country,
-        guests
+const matchValue = (valA, valB) => {
+    return valA.toLowerCase().includes(valB.toLowerCase())
+}
+
+export const searchLocation = (value) => {
+    const filteredLocations = []
+    for (const property of properties) {
+        if (matchValue(property.city, value) || matchValue(property.country, value)) {
+            const location = { city: property.city, country: property.country }
+            if (!filteredLocations.find(loc => loc.city === property.city)) {
+                filteredLocations.push(location)
+            }
+        }
     }
+
+    return filteredLocations
 }
