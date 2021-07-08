@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/windbnb/static/css/main.c503c3bd.chunk.css",
+    "main.js": "/windbnb/static/js/main.cd8be581.chunk.js",
+    "main.js.map": "/windbnb/static/js/main.cd8be581.chunk.js.map",
+    "runtime-main.js": "/windbnb/static/js/runtime-main.2f81eab0.js",
+    "runtime-main.js.map": "/windbnb/static/js/runtime-main.2f81eab0.js.map",
+    "static/js/2.19b95998.chunk.js": "/windbnb/static/js/2.19b95998.chunk.js",
+    "static/js/2.19b95998.chunk.js.map": "/windbnb/static/js/2.19b95998.chunk.js.map",
+    "static/js/3.7b15d6e5.chunk.js": "/windbnb/static/js/3.7b15d6e5.chunk.js",
+    "static/js/3.7b15d6e5.chunk.js.map": "/windbnb/static/js/3.7b15d6e5.chunk.js.map",
+    "index.html": "/windbnb/index.html",
+    "static/css/main.c503c3bd.chunk.css.map": "/windbnb/static/css/main.c503c3bd.chunk.css.map",
+    "static/js/2.19b95998.chunk.js.LICENSE.txt": "/windbnb/static/js/2.19b95998.chunk.js.LICENSE.txt",
+    "static/media/close.26da0fa3.svg": "/windbnb/static/media/close.26da0fa3.svg",
+    "static/media/logo.beef9462.svg": "/windbnb/static/media/logo.beef9462.svg",
+    "static/media/place.358ad5a3.svg": "/windbnb/static/media/place.358ad5a3.svg",
+    "static/media/search--concrete.2de8c779.svg": "/windbnb/static/media/search--concrete.2de8c779.svg",
+    "static/media/search--sienna.9b5cb03f.svg": "/windbnb/static/media/search--sienna.9b5cb03f.svg",
+    "static/media/Stay.css": "/windbnb/static/media/star.14a80281.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f81eab0.js",
+    "static/js/2.19b95998.chunk.js",
+    "static/css/main.c503c3bd.chunk.css",
+    "static/js/main.cd8be581.chunk.js"
+  ]
+}
