@@ -1,0 +1,18 @@
+
+.home{
+    &__header{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    &__country{
+        font-size:var(--fontsize-l);
+        color:var(--mine-shaft);
+    }
+
+    &__count{
+        margin-left: auto;
+        color:var(--emperor);
+    }
+}

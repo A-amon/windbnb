@@ -1,0 +1,20 @@
+.home__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.home__country {
+  font-size: var(--fontsize-l);
+  color: var(--mine-shaft);
+}
+
+.home__count {
+  margin-left: auto;
+  color: var(--emperor);
+}
+/*# sourceMappingURL=Home.css.map */
