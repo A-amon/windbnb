@@ -14,13 +14,11 @@ This is a one-page site.
 
 The organization used in this project is as followed:
 ```
---App
-----css
-------App.css
-----scss
-------App.scss
-----App.js
 --src
+----App
+------css
+------scss
+------App.js
 ----components
 ------componentA
 ------componentB
