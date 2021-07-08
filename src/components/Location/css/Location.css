@@ -7,6 +7,13 @@
       -ms-flex-align: center;
           align-items: center;
   color: var(--emperor);
+  cursor: pointer;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.location:hover {
+  background: var(--concrete);
 }
 
 .location img {

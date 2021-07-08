@@ -4,6 +4,11 @@
     display: flex;
     align-items: center;
     color: var(--emperor);
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover{
+        background:var(--concrete);
+    }
     img{
         margin-right: 1rem;
     }
