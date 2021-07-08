@@ -14,5 +14,11 @@
     &__count{
         margin-left: auto;
         color:var(--emperor);
+        font-size: var(--fontsize-s);
+        font-weight: 600;
+    }
+
+    .stay{
+        margin-bottom:2rem;
     }
 }

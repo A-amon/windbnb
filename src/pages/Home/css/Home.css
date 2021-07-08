@@ -16,5 +16,11 @@
 .home__count {
   margin-left: auto;
   color: var(--emperor);
+  font-size: var(--fontsize-s);
+  font-weight: 600;
+}
+
+.home .stay {
+  margin-bottom: 2rem;
 }
 /*# sourceMappingURL=Home.css.map */
