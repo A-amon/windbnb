@@ -1,24 +1,31 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Stay from '../../components/Stay/Stay'
-import { getAllProperties } from '../../redux/actions/propertyActions'
+import { getAllProperties, getProperties } from '../../redux/actions/propertyActions'
+import { useParams } from 'react-router'
+
 import './css/Home.css'
 
 export default function Home () {
-    const { searchCountry, properties } = useSelector(state => state)
+    const { city, country } = useParams()
+    const { properties } = useSelector(state => state)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllProperties())
-    }, [])
+        if (city && country) {
+            dispatch(getProperties(city, country))
+        } else {
+            dispatch(getAllProperties())
+        }
+    }, [city])
 
     return (
         <section className="home">
             <div className="home__header">
                 <h1 className="home__country">
                     {
-                        searchCountry !== null
-                            ? `Stays in ${searchCountry}`
+                        country
+                            ? `Stays in ${country}`
                             : 'All stays'
                     }
                 </h1>
