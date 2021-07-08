@@ -1,5 +1,10 @@
+@import '../../styles/scss/breakpoints';
 
 body{
     font-family: var(--font-montserrat);
     padding:1rem;
+
+    @include tablet-query{
+        padding:1rem 5rem;
+    }
 }

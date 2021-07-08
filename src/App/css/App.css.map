@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AACA,AAAA,IAAI,CAAA;EACA,WAAW,EAAE,sBAAsB;EACnC,OAAO,EAAC,IAAI;CACf",
+    "mappings": "AAEA,AAAA,IAAI,CAAA;EACA,WAAW,EAAE,sBAAsB;EACnC,OAAO,EAAC,IAAI;CAKf;;ACPG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EDAvC,AAAA,IAAI,CAAA;IAKI,OAAO,EAAC,SAAS;GAExB",
     "sources": [
-        "../scss/App.scss"
+        "../scss/App.scss",
+        "../../styles/scss/_breakpoints.scss"
     ],
     "names": [],
     "file": "App.css"
