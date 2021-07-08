@@ -22,10 +22,11 @@
   z-index: 1;
   width: 100%;
   height: 80vh;
-  background: var(--white);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 1.5rem 1rem;
+  -webkit-animation: expandFromTop 0.5s 1 forwards;
+          animation: expandFromTop 0.5s 1 forwards;
 }
 
 .searchbar--focused::before, .searchbar--focused::after {
@@ -46,6 +47,8 @@
 .searchbar--focused::after {
   height: 80vh;
   background: var(--white);
+  -webkit-animation: expandFromTop 0.5s 1 forwards;
+          animation: expandFromTop 0.5s 1 forwards;
 }
 
 .searchbar--focused .searchbar__header {
@@ -106,6 +109,7 @@
   width: 100%;
   max-height: 30vh;
   overflow: auto;
+  margin-top: 1rem;
 }
 
 .searchbar--focused .searchbar__submit {
@@ -220,6 +224,31 @@
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
+  }
+  .searchbar--focused .searchbar__locations::-webkit-scrollbar {
+    background: none;
+    width: 10px;
+  }
+  .searchbar--focused .searchbar__locations::-webkit-scrollbar-thumb {
+    background: var(--gray);
+  }
+}
+
+@-webkit-keyframes expandFromTop {
+  from {
+    height: 40vh;
+  }
+  to {
+    height: 80vh;
+  }
+}
+
+@keyframes expandFromTop {
+  from {
+    height: 40vh;
+  }
+  to {
+    height: 80vh;
   }
 }
 /*# sourceMappingURL=Searchbar.css.map */
