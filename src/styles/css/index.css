@@ -41,6 +41,10 @@ input, button {
   font-size: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .aria--hide {
   display: block;
   width: 0;
