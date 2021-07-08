@@ -1,0 +1,7 @@
+
+export const SET_SEARCH = 'SET_SEARCH'
+
+export const GET_ALL_PROPERTIES = 'GET_ALL_PROPERTIES'
+export const GET_PROPERTIES = 'GET_PROPERTIES'
+
+export const LOADING = 'LOADING'
