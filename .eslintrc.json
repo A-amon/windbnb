@@ -18,5 +18,13 @@
         "react"
     ],
     "rules": {
+        "react/react-in-jsx-scope": "off",
+        "indent": [ //4-spaces indentation
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ]
     }
 }
