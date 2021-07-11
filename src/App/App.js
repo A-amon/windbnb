@@ -10,9 +10,6 @@ export default function App () {
                 <Header />
                 <main>
                     <Switch>
-                        <Route path="/city=:city?&country=:country?">
-                            <Home />
-                        </Route>
                         <Route path="/">
                             <Home />
                         </Route>
