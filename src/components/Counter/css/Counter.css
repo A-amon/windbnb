@@ -1,0 +1,45 @@
+.counter {
+  padding: 1rem;
+  font-size: var(--fontsize-r);
+  color: var(--mine-shaft);
+}
+
+.counter__title {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.counter__desc {
+  font-weight: 400;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+}
+
+.counter__wrapper {
+  margin-top: 1rem;
+}
+
+.counter__wrapper, .counter__wrapper .counter__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.counter__wrapper .counter__value {
+  padding: 0 1rem;
+}
+
+.counter__wrapper .counter__button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: none;
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+}
+/*# sourceMappingURL=Counter.css.map */

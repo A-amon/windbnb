@@ -59,7 +59,6 @@
         }
 
         .searchbar__form{
-            flex-direction: column;
             border-radius: 0;
             box-shadow: none;   //remove default shadow
         }
@@ -92,8 +91,11 @@
             }
         }
 
-        .searchbar__locations{
+        .searchbar__locations, .searchbar__counters{
             width: 100%;
+        }
+
+        .searchbar__locations{
             max-height: 30vh;
             overflow: auto;
             margin-top:1rem;
@@ -116,9 +118,11 @@
         }
     }
 
+    &__header{
+        display: none;
+    }
+
     &__form{
-        display: flex;
-        align-items: center;
         box-shadow:0px 0px 5px rgba(black, 0.1);
         border-radius: 15px;
     }
@@ -130,7 +134,7 @@
     &__group{
         border-right:1px solid var(--concrete);
         flex:1;
-        
+
         label{
             @extend .aria--hide;
         }
@@ -161,11 +165,22 @@
     }
 
     @include tablet-query{
+        
+        .searchbar__form{
+            display:grid;
+            grid-template-columns: 150px 150px auto;
+        }
+
         &--focused{
             .searchbar__form{
-                flex-direction: row;
-                flex-wrap: wrap;
+                grid-template-columns: 500px 500px auto;
+                align-items: center;
                 width: 100%;
+            }
+
+            .searchbar__group, .searchbar___locations, .searchbar__counters{
+                min-width: 500px;
+                width: 500px;
             }
 
             .searchbar__group{
@@ -187,9 +202,11 @@
                 margin-left: 1rem;
             }
 
-            .searchbar__locations{
-                width: 100%;
+            .searchbar__locations, .searchbar__counters{
                 order:4;
+            }
+
+            .searchbar__locations{
                 &::-webkit-scrollbar{
                     background:none;
                     width: 10px;
@@ -198,6 +215,10 @@
                 &::-webkit-scrollbar-thumb{
                     background:var(--gray);
                 }
+            }
+
+            .searchbar__counters{
+                grid-column: 2;
             }
         }
     }

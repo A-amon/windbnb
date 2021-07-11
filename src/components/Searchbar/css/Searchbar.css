@@ -67,10 +67,6 @@
 }
 
 .searchbar--focused .searchbar__form {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   border-radius: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -105,8 +101,11 @@
   overflow: visible;
 }
 
-.searchbar--focused .searchbar__locations {
+.searchbar--focused .searchbar__locations, .searchbar--focused .searchbar__counters {
   width: 100%;
+}
+
+.searchbar--focused .searchbar__locations {
   max-height: 30vh;
   overflow: auto;
   margin-top: 1rem;
@@ -130,13 +129,11 @@
   color: var(--concrete);
 }
 
+.searchbar__header {
+  display: none;
+}
+
 .searchbar__form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -193,14 +190,23 @@
 }
 
 @media screen and (min-width: 768px) {
+  .searchbar .searchbar__form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 150px 150px auto;
+        grid-template-columns: 150px 150px auto;
+  }
   .searchbar--focused .searchbar__form {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-grid-columns: 500px 500px auto;
+        grid-template-columns: 500px 500px auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
+  }
+  .searchbar--focused .searchbar__group, .searchbar--focused .searchbar___locations, .searchbar--focused .searchbar__counters {
+    min-width: 500px;
+    width: 500px;
   }
   .searchbar--focused .searchbar__group:nth-child(1) {
     border-top-right-radius: 0;
@@ -219,8 +225,7 @@
     bottom: unset;
     margin-left: 1rem;
   }
-  .searchbar--focused .searchbar__locations {
-    width: 100%;
+  .searchbar--focused .searchbar__locations, .searchbar--focused .searchbar__counters {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
@@ -231,6 +236,10 @@
   }
   .searchbar--focused .searchbar__locations::-webkit-scrollbar-thumb {
     background: var(--gray);
+  }
+  .searchbar--focused .searchbar__counters {
+    -ms-grid-column: 2;
+    grid-column: 2;
   }
 }
 

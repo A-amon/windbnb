@@ -1,0 +1,37 @@
+
+.counter{
+    padding:1rem;
+    font-size: var(--fontsize-r);
+    color:var(--mine-shaft);
+    &__title{
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    &__desc{
+        font-weight: 400;
+        opacity:0.5;
+        margin-top:0.5rem;
+    }
+
+    &__wrapper{
+        margin-top:1rem;
+        &, .counter__button{
+            display: flex;
+            align-items: center;
+        }
+
+        .counter__value{
+            padding:0 1rem;
+        }
+
+        .counter__button{
+            justify-content: center;
+            background:none;
+            height:2rem;
+            width: 2rem;
+            border:1px solid var(--gray);
+            border-radius: 5px;
+        }
+    }
+}
