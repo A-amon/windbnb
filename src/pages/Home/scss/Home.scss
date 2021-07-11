@@ -21,6 +21,12 @@
 
     .stay{
         margin-bottom:2rem;
+        &.appear,&.enter{
+            animation:slideIn 1s 1 forwards;
+        }
+        &.exit{
+            animation:slideOut 1s 1 forwards;
+        }
     }
 
     @include tablet-query{
@@ -36,5 +42,27 @@
         &__stays{
             grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
         }
+    }
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+@keyframes slideOut{
+    from{
+        opacity:1;
+        transform:translateY(0px);
+    }
+    to{
+        opacity:0;
+        transform:translateY(50px);
     }
 }
