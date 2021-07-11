@@ -1,5 +1,4 @@
 import {
-    GET_ALL_PROPERTIES,
     GET_PROPERTIES,
     LOADING
 } from '../actionTypes'
@@ -11,27 +10,34 @@ const loadingProperties = () => {
     }
 }
 
-export const getAllProperties = () => {
-    return dispatch => {
-        dispatch(loadingProperties())
-        dispatch({
-            type: GET_ALL_PROPERTIES,
-            properties: properties.sort(compareRatings)
-        })
-    }
+//  filter properties by location (city & country)
+const filterByLocation = (city, country, properties) => {
+    return properties.filter(property =>
+        property.city === city &&
+        property.country === country
+    )
 }
 
-export const getProperties = (city, country, guests = null) => {
-    const filteredProperties = properties.filter(
-        property =>
-            (
-                property.city === city &&
-                property.country === country
-            ) ||
-            (guests !== null && guests <= property.maxGuests)
-    ).sort(compareRatings)
+//  filter properties by max number of guests
+const filterByMaxGuests = (guests, properties) => {
+    return properties.filter(property =>
+        guests <= property.maxGuests)
+}
 
-    console.log(city, filteredProperties)
+//  get properties
+//  return all properties if city, country & guests = null
+export const getProperties = (city, country, guests) => {
+    let filteredProperties = properties
+
+    if (city !== null) {
+        filteredProperties = filterByLocation(city, country, filteredProperties)
+    }
+    if (guests !== null) {
+        filteredProperties = filterByMaxGuests(guests, filteredProperties)
+    }
+
+    filteredProperties = filteredProperties.sort(compareRatings)
+
     return dispatch => {
         dispatch(loadingProperties())
         dispatch({
@@ -41,6 +47,7 @@ export const getProperties = (city, country, guests = null) => {
     }
 }
 
+//  for sorting by rating in descending order
 const compareRatings = (propertyA, propertyB) => {
     return propertyA.rating > propertyB.rating ? -1 : 1
 }
