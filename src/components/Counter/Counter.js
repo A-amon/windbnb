@@ -1,15 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import './css/Counter.css'
 
 Counter.propTypes = {
     onChange: PropTypes.func,
     title: PropTypes.string,
-    desc: PropTypes.string
+    desc: PropTypes.string,
+    initVal: PropTypes.number
 }
 
-export default function Counter ({ onChange, title, desc }) {
+export default function Counter ({ onChange, title, desc, initVal }) {
     const [count, setCount] = useState(0)
+
+    //  use initial value if available
+    useEffect(() => {
+        if (initVal) {
+            setCount(initVal)
+        }
+    }, [])
 
     return (
         <div className="counter">

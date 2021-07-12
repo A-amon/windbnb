@@ -11,10 +11,11 @@ Searchbar.propTypes = {
     onLocationChange: PropTypes.func,
     onSearch: PropTypes.func,
     results: PropTypes.array,
-    initLocation: PropTypes.string
+    initLocation: PropTypes.object,
+    initGuests: PropTypes.object
 }
 
-export default function Searchbar ({ onLocationChange, onSearch, results, initLocation }) {
+export default function Searchbar ({ onLocationChange, onSearch, results, initLocation, initGuests }) {
     const [searchLocation, setSearchLocation] = useState('')//  location input value
     const [isFocus, setIsFocus] = useState({})//    focus state of either location/guests input
 
@@ -24,7 +25,17 @@ export default function Searchbar ({ onLocationChange, onSearch, results, initLo
     //  set location input value
     //  based on existing search params
     useEffect(() => {
-        setSearchLocation(initLocation)
+        const { city, country } = initLocation
+        if (city && country) {
+            setLocation({ city, country })
+            setSearchLocation(`${city}, ${country}`)
+        }
+
+        const { adults, children } = initGuests
+        if (adults || children) {
+            console.log(adults, children)
+            setGuests({ adults, children })
+        }
     }, [initLocation])
 
     //  run search
@@ -90,7 +101,9 @@ export default function Searchbar ({ onLocationChange, onSearch, results, initLo
                     <input type="number"
                         id="searchGuests"
                         placeholder="Add guests"
-                        value={guests.adults + guests.children}
+                        value={(guests.adults + guests.children === 0// show placeholder when adults + children = 0
+                            ? false
+                            : guests.adults + guests.children)}
                         onFocus={e => setIsFocus({ guests: true })}
                         readOnly
                     />
@@ -118,10 +131,12 @@ export default function Searchbar ({ onLocationChange, onSearch, results, initLo
                             <Counter
                                 title='Adults'
                                 desc='Ages 13 or above'
+                                initVal={guests.adults}
                                 onChange={count => setGuests({ children: guests.children, adults: count })} />
                             <Counter
                                 title='Children'
                                 desc='Ages 2 - 12'
+                                initVal={guests.children}
                                 onChange={count => setGuests({ children: count, adults: guests.adults })} />
                         </div>
                         : null
